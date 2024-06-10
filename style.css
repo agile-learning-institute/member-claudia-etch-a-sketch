@@ -1,9 +1,17 @@
-.canvas {
-    width: 10px;
-    height: 10px;
-    background-color: red;
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 25%;
+    max-width: 25%;
 }
 
-#container {
-    display: flexbox;
+.canvas {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(139, 124, 124);
+    border: 1px solid rgb(243, 233, 233);
+}
+
+.canvas:hover {
+    background-color: black;
 }
