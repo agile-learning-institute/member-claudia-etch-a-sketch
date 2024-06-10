@@ -15,3 +15,7 @@
 .canvas:hover {
     background-color: black;
 }
+
+.btn {
+    padding: 5px;
+}
