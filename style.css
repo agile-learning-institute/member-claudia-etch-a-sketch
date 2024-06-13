@@ -1,19 +1,25 @@
-#container {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 25%;
-    max-width: 25%;
+.head {
+    padding: 15px
 }
 
 .canvas {
-    width: 80px;
-    height: 80px;
-    background-color: rgb(139, 124, 124);
-    border: 1px solid rgb(243, 233, 233);
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 640px;
+    background-color: aqua;
 }
 
-.canvas:hover {
-    background-color: black;
+.cells {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(139, 124, 124);
+    border: 1px solid rgb(243, 233, 233);
+    transition: background-color 0.5s ease;
+}
+
+.cells:hover {
+    background-color: blanchedalmond
 }
 
 .btn {
