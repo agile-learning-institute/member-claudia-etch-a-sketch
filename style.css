@@ -1,22 +1,76 @@
+#container {
+    width: 1200px;
+    height: 1200px;
+    background-color: aqua;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    color: blue;
+    font-size: 50px;
+    height: 120px;
+    border: rgb(228, 247, 247) 1px solid;
+    border-radius: 1%;
+    background-color: azure;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#canvas {
+    width: 1000px;
+    height: 800px;
+    background-color: aliceblue;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    padding: 5px;
+    overflow: hidden;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    background-color: rgb(41, 125, 125);
+    border: aqua 1px solid;
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    color: rgb(205, 205, 235);
+    cursor: pointer;
+}
+
+
+
+.cells {
+    --cells-per-row: 10;
+    width: calc(100% / var(--cells-per-row));
+    height: calc(100% / var(--cells-per-row));
+    display: flex;
+    background-color: rgb(139, 124, 124);
+    border: 1px solid rgb(243, 233, 233);
+    transition: background-color 0.5s ease;
+    box-sizing: border-box;
+}
+
+/* 
 .head {
     padding: 15px
 }
 
-.canvas {
-    display: flex;
-    flex-wrap: wrap;
-    width: 640px;
-    height: 640px;
-    background-color: aqua;
-}
 
-.cells {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(139, 124, 124);
-    border: 1px solid rgb(243, 233, 233);
-    transition: background-color 0.5s ease;
-}
+
 
 .cells:hover {
     background-color: blanchedalmond
@@ -25,3 +79,70 @@
 .btn {
     padding: 5px;
 }
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: red;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 500px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 400px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.btn_popup {
+    background-color: blue;
+    color: yellow;
+    padding: 10px 20px;
+    border-radius: 70px;
+}
+
+.blackButton {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 70px;
+}
+
+.randomButton {
+    background-color: aqua;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 70px;
+}
+
+.eraseButton {
+    background-color: grey;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 70px;
+}
+
+.resetButton {
+    padding: 10px 20px;
+    border-radius: 70px;
+}
+
+.board {
+    width: 1200px;
+    height: 700px;
+    display: grid;
+    border: 2px solid black;
+    background-color: white;
+} */
