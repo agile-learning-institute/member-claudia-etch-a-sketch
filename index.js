@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 
-let size = 1;
+let size;
 
 const input = document.querySelector("#input");
 
@@ -9,107 +9,79 @@ input.addEventListener("click", () => {
 });
 
 function getInput() {
-  size = parseInt(prompt("Enter no. of boxes for x and y axis, maximum 100"));
+  size = parseInt(prompt("Enter number of box requirement, maximum 100"));
   if (size > 1 && size <= 100) {
     document.documentElement.style.setProperty("--cells-per-row", size);
     updatecanvas();
-  } else alert("Input size is out of range - not between 1 and 100");
+  } else {
+    alert("Input size is out of range - not between 1 and 100");
+  }
 }
+
 function updatecanvas() {
   const canvas = document.getElementById("canvas");
   canvas.innerHTML = "";
   for (let i = 0; i < size; i++) {
-    const cells = document.createElement("div");
-    cells.classList.add("cells");
-    canvas.appendChild(cells);
-    console.log("updated");
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    canvas.appendChild(cell);
+  }
+
+  const cells = canvas.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseenter", () => {
+      const color = getColor();
+      cell.style.backgroundColor = color;
+      console.log(color);
+    });
+
+    // cell.addEventListener("mouseleave", () => {
+    //   cell.style.backgroundColor = "";
+    // });
+  });
+}
+let reset = document.getElementById("reset");
+reset.addEventListener("click", () => {
+  canvas.innerHTML = "";
+});
+
+function randomColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+function getColor() {
+  const selectedColor = document.querySelector(".button.selected");
+  if (!selectedColor) return "";
+  switch (selectedColor.id) {
+    case "red":
+      return "red";
+
+    case "black":
+      return "black";
+
+    case "random":
+      return randomColor();
+    default:
+      return "";
   }
 }
-console.log("created");
 
-// //elements from the DOM
-// const board = document.querySelector(".board");
-// const message = document.getElementById("message");
-// let currentColor = "black"; //global variable
+// const buttonContainer = document.getElementById("buttonContainer");
+// buttonContainer.addEventListener("click", (event) => {
+//   const buttonId = event.target.closest(".button");
+//   if (!buttonId) return;
 
-// //create the grid
-// function createGrid(size) {
-//   //clear the board
-//   board.innerHTML = "";
-
-//   //set grid columns and rows
-//   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-//   board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-
-//   //create cells and append them to the board
-//   for (let i = 0; i < size * size; i++) {
-//     const cell = document.createElement("div");
-//     cell.classList.add("cell");
-//     cell.addEventListener("mouseover", changeColor);
-//     board.appendChild(cell);
-//   }
-// }
-
-// //change the color of the cell
-// function changeColor(e) {
-//   const color = getColor();
-//   e.target.style.backgroundColor = color;
-// }
-
-// //get color based on button click
-// function getColor() {
-//   if (currentColor === "random") {
-//     return getRandomColor();
-//   } else if (currentColor === "white") {
-//     return "white";
-//   } else {
-//     return currentColor;
-//   }
-// }
-
-// //generate random color
-// function getRandomColor() {
-//   const letters = "0123456789ABCDEF";
-//   let color = "#";
-//   for (let i = 0; i < 6; i++) {
-//     color += letters[Math.floor(Math.random() * 16)];
-//   }
-//   return color;
-// }
-
-// function setColor(color) {
-//   if (color === "white") {
-//     //set the color to white
-//     document.getElementById("draw").innerText = "Erase";
-//   } else if (color === "random") {
-//     document.getElementById("draw").innerText = "Random";
-//   } else {
-//     document.getElementById("draw").innerText =
-//       color.charAt(0).toUpperCase() + color.slice(1);
-//   }
-//   currentColor = color === "random" ? "random" : color;
-// }
-
-// //erase button
-// function resetBoard() {
-//   setColor("white"); //set color to white
-//   const cells = document.querySelectorAll(".cell");
-//   cells.forEach((cell) => {
-//     cell.style.backgroundColor = "white";
-//   });
-// }
-
-// //popup button to select grid size
-// document.getElementById("popup").addEventListener("click", function () {
-//   const size = prompt("Enter grid size (e.g., 16 for a 16x16 grid):");
-//   if (size) {
-//     if (size < 1 || size > 100) {
-//       message.textContent = "Grid size must be between 1 and 100.";
-//       return;
-//     }
-//     createGrid(size);
-//   }
+//   const buttons = buttonContainer.querySelectorAll(".button");
+//   buttons.forEach((btn) => btn.classList.remove("selected"));
+//   buttonId.classList.add("selected");
+//   updatecanvas();
 // });
 
-// //default grid size
-// createGrid(16);
+const buttons = document.querySelectorAll(".button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttons.forEach((btn) => btn.classList.remove("selected"));
+    button.classList.add("selected");
+    updatecanvas();
+  });
+});
