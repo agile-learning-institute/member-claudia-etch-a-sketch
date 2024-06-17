@@ -34,14 +34,8 @@ function updatecanvas(size) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     canvas.appendChild(cell);
-  }
-
-  const cells = canvas.querySelectorAll(".cell");
-  cells.forEach((cell) => {
     cell.addEventListener("mouseenter", () => {
       cell.style.backgroundColor = getColor();
     });
-
-  });
+  }
 }
-
