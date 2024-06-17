@@ -21,13 +21,13 @@ function getColor() {
 function setSize() {
   const size = parseInt(prompt("Enter number of cells you want, maximum 100"));
   if (size > 1 && size <= 100) {
-    updatecanvas(size);
+    updateCanvas(size);
   } else {
     alert("Input size is out of range - not between 1 and 100");
   }
 }
 
-function updatecanvas(size) {
+function updateCanvas(size) {
   const canvas = document.getElementById("canvas");
   canvas.innerHTML = "";
   canvas.style.setProperty("--cells-per-row", size);
