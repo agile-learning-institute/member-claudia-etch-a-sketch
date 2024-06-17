@@ -1,7 +1,7 @@
+const canvas = document.getElementById("canvas");
 let color = "";
 
 function reset() {
-  const canvas = document.getElementById("canvas");
   canvas.innerHTML = "";
   color = "";
 }
@@ -28,15 +28,14 @@ function setSize() {
 }
 
 function updateCanvas(size) {
-  const canvas = document.getElementById("canvas");
   canvas.innerHTML = "";
   canvas.style.setProperty("--cells-per-row", size);
   for (let i = 0; i < size**2; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
-    canvas.appendChild(cell);
     cell.addEventListener("mouseenter", () => {
       cell.style.backgroundColor = getColor();
     });
+    canvas.appendChild(cell);
   }
 }
