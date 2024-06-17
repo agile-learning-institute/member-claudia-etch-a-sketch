@@ -9,7 +9,7 @@ input.addEventListener("click", () => {
 });
 
 function getInput() {
-  size = parseInt(prompt("Enter number of box requirement, maximum 100"));
+  size = parseInt(prompt("Enter number of cells you want, maximum 100"));
   if (size > 1 && size <= 100) {
     document.documentElement.style.setProperty("--cells-per-row", size);
     updatecanvas();
