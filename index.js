@@ -1,6 +1,7 @@
 let color = "";
 
 function reset() {
+  const canvas = document.getElementById("canvas");
   canvas.innerHTML = "";
 }
 
