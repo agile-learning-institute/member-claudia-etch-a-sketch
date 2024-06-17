@@ -69,14 +69,14 @@
     box-sizing: border-box;
 }
 
-#red {
+.red {
     background-color: red;
 }
 
-#black {
+.black {
     background-color: black;
 }
 
-#random {
+.random {
     background-image: url("img/random-colors.jpeg");
 }
