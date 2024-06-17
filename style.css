@@ -1,5 +1,4 @@
 #container {
-    --cells-per-row: 10;
     width: 1200px;
     height: 1200px;
     background-color: aqua;
@@ -29,6 +28,7 @@
 
 
 #canvas {
+    --cells-per-row: 10;
     width: 1000px;
     height: 800px;
     background-color: aliceblue;
