@@ -17,13 +17,13 @@
     <div id="container">
       <div class="header">Etch a Sketch</div>
       <div id="buttonContainer">
-        <button class="button" id="input">Select board size</button>
-        <button class="button" id="reset">Reset</button>
+        <button class="button" onclick="setSize()">Select board size</button>
+        <button class="button" onclick="reset()">Reset</button>
         <div class="info">
           Color, color, what color cells do you want?
-          <button class="button" id="red">Red</button>
-          <button class="button" id="black">Black</button>
-          <button class="button" id="random">Random</button>
+          <button class="red button" onclick="setColor('red')">Red</button>
+          <button class="black button" onclick="setColor('black')">Black</button>
+          <button class="random button" onclick="setColor('random')">Random</button>
         </div>
       </div>
       <div id="canvas"></div>
