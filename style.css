@@ -39,9 +39,6 @@
     align-items: left;
     padding: 5px;
     overflow: hidden;
-
-    /* grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
 }
 
 #buttonContainer {

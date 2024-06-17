@@ -16,7 +16,7 @@ function getColor() {
   }
 }
 
-function getInput() {
+function setSize() {
   const size = parseInt(prompt("Enter number of cells you want, maximum 100"));
   if (size > 1 && size <= 100) {
     const container = document.querySelector("#container");
