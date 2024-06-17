@@ -32,7 +32,6 @@ function updatecanvas() {
     cell.addEventListener("mouseenter", () => {
       const color = getColor();
       cell.style.backgroundColor = color;
-      console.log(color);
     });
 
     // cell.addEventListener("mouseleave", () => {
@@ -65,17 +64,6 @@ function getColor() {
       return "";
   }
 }
-
-// const buttonContainer = document.getElementById("buttonContainer");
-// buttonContainer.addEventListener("click", (event) => {
-//   const buttonId = event.target.closest(".button");
-//   if (!buttonId) return;
-
-//   const buttons = buttonContainer.querySelectorAll(".button");
-//   buttons.forEach((btn) => btn.classList.remove("selected"));
-//   buttonId.classList.add("selected");
-//   updatecanvas();
-// });
 
 const buttons = document.querySelectorAll(".button");
 buttons.forEach((button) => {
