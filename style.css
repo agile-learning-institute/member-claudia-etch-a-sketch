@@ -76,3 +76,7 @@
 #black {
     background-color: black;
 }
+
+#random {
+    background-image: url("img/random-colors.jpeg");
+}
