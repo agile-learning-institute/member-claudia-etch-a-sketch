@@ -1,4 +1,5 @@
 #container {
+    --cells-per-row: 10;
     width: 1200px;
     height: 1200px;
     background-color: aqua;
@@ -59,7 +60,6 @@
 }
 
 .cell {
-    --cells-per-row: 10;
     width: calc(100% / var(--cells-per-row));
     height: calc(100% / var(--cells-per-row));
     display: flex;

@@ -11,7 +11,7 @@ input.addEventListener("click", () => {
 function getInput() {
   size = parseInt(prompt("Enter number of cells you want, maximum 100"));
   if (size > 1 && size <= 100) {
-    document.documentElement.style.setProperty("--cells-per-row", size);
+    container.style.setProperty("--cells-per-row", size);
     updatecanvas();
   } else {
     alert("Input size is out of range - not between 1 and 100");
@@ -21,7 +21,7 @@ function getInput() {
 function updatecanvas() {
   const canvas = document.getElementById("canvas");
   canvas.innerHTML = "";
-  for (let i = 0; i < size; i++) {
+  for (let i = 0; i < size**2; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     canvas.appendChild(cell);
