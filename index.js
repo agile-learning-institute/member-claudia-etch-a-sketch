@@ -1,4 +1,3 @@
-let size;
 let color = "";
 
 function reset() {
@@ -18,17 +17,17 @@ function getColor() {
 }
 
 function getInput() {
-  size = parseInt(prompt("Enter number of cells you want, maximum 100"));
+  const size = parseInt(prompt("Enter number of cells you want, maximum 100"));
   if (size > 1 && size <= 100) {
     const container = document.querySelector("#container");
     container.style.setProperty("--cells-per-row", size);
-    updatecanvas();
+    updatecanvas(size);
   } else {
     alert("Input size is out of range - not between 1 and 100");
   }
 }
 
-function updatecanvas() {
+function updatecanvas(size) {
   const canvas = document.getElementById("canvas");
   canvas.innerHTML = "";
   for (let i = 0; i < size**2; i++) {
